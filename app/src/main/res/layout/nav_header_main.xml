@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/d120"
+    android:background="@color/colorNavigationView"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/d16">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_profile"
+            android:layout_width="@dimen/d75"
+            android:layout_height="@dimen/d75"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/img_profile"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+        <LinearLayout
+            android:id="@+id/layout_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/d10"
+                android:textColor="@android:color/white"
+                tools:text="@tools:sample/first_names"
+                android:textSize="@dimen/d20" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/d10"
+                android:textColor="@color/hint_color"
+                android:text="@string/edit_profile"
+                android:textSize="@dimen/d14" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -6,13 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+        <item name="searchViewStyle">@style/SearchViewStyle</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="catalogToolbarStyle">@style/Widget.Catalog.Toolbar</item>
+        <item name="catalogToolbarWithCloseButtonStyle">@style/Widget.Catalog.Toolbar.Explore</item>
     </style>
 
     <style name="DialogNoAnimation">
@@ -33,4 +36,35 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
+    <style name="Widget.Catalog.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="Widget.Catalog.Toolbar.Explore" parent="Widget.Catalog.Toolbar">
+        <item name="navigationContentDescription">@string/toolbar_navigation_close_description</item>
+        <item name="navigationIcon">@drawable/ic_menu</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/ic_search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <!--<item name="queryBackground">@color/colorActionbarWidget</item>-->
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@drawable/ic_search</item>
+        <item name="closeIcon">@drawable/ic_close</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">@string/search_hint</item>
+
+    </style>
+
+    <style name="TextAppearance.Catalog.SectionTitle" parent="TextAppearance.AppCompat.Subhead"/>
+
+    <style name="TextAppearance.Catalog.Body" parent="TextAppearance.AppCompat.Body1"/>
+
+    <style name="TextAppearance.Catalog.ListTitle" parent="TextAppearance.AppCompat.Body1"/>
+
+    <style name="TextAppearance.Catalog.ListSubtitle" parent="TextAppearance.AppCompat.Caption"/>
 </resources>

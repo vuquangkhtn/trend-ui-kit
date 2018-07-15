@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_shop"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/shop_name" />
+                    <item
+                        android:id="@+id/nav_orders"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/orders_name" />
+                    <item
+                        android:id="@+id/nav_wishlist"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/wishlist_name" />
+                </group>
+            </menu>
+        </item>
+        <item android:title="">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_explore"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/explore_name" />
+                    <item
+                        android:id="@+id/nav_comment"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/comment_name" />
+                    <item
+                        android:id="@+id/nav_search"
+                        android:icon="@drawable/ic_search"
+                        android:title="@string/search_name" />
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
