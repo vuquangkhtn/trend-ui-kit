@@ -9,10 +9,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.view.menu.MenuItemImpl;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
@@ -48,7 +51,6 @@ public class MainActivity extends BaseActivity {
         // Setup drawer view
         setDefaultFragment();
         setupDrawerContent(navigationView);
-
     }
 
     @Override
@@ -58,20 +60,35 @@ public class MainActivity extends BaseActivity {
                 mDrawer.openDrawer(GravityCompat.START);
                 return true;
             }
+            case R.id.app_bar_search: {
+                Log.d(TAG,"test");
+                changeFragment(new SearchFragment(), item);
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.action_main_menu, menu);
-        MenuItem searchItem = menu.findItem(R.id.app_bar_search);
+        toolbar.setTitle(R.string.explore_name);
+
+        SearchView search = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
+
+        search.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG,"test search");
+                changeFragment(new SearchFragment(),navigationView.getMenu().findItem(R.id.nav_search));
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
 
     private void setDefaultFragment() {
         toolbar.setTitle(R.string.explore_name);
-        // set default fragment
         navigationView.setCheckedItem(R.id.nav_explore);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.popBackStack();
@@ -126,14 +143,17 @@ public class MainActivity extends BaseActivity {
         }
 
         // Insert the fragment by replacing any existing fragment
+        changeFragment(fragment, menuItem);
+    }
+
+    private void changeFragment(Fragment fragment, MenuItem menuItem) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
-        menuItem.setChecked(true);
-        // Set action bar title
+        navigationView.setCheckedItem(menuItem.getItemId());
         toolbar.setTitle(menuItem.getTitle());
-        // Close the navigation drawer
+        // Close the navigation mDrawer
         mDrawer.closeDrawers();
     }
 }

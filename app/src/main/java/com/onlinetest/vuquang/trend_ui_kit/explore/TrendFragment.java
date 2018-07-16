@@ -1,8 +1,16 @@
 package com.onlinetest.vuquang.trend_ui_kit.explore;
 
+import android.view.View;
+
+import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
+
 /**
  * Created by VuQuang on 7/16/2018.
  */
 
-public class TrendFragment {
+public class TrendFragment extends BaseFragment {
+    @Override
+    protected void setUp(View view) {
+
+    }
 }

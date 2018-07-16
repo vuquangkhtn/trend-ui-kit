@@ -5,7 +5,7 @@
     android:id="@+id/view_container"
     android:layout_width="match_parent"
     android:layout_height="@dimen/d120"
-    android:background="@color/colorNavigationView"
+    android:background="@android:color/transparent"
     android:gravity="bottom"
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
