@@ -26,14 +26,11 @@ public class ExploreFragment extends BaseFragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if(savedInstanceState == null) {
-            View view = View.inflate(getActivity(), R.layout.fragment_explore, null);
-            mViewPager = (NoSwipeViewPager) view.findViewById(R.id.view_pager);
-            mTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-            mViewPager.setOffscreenPageLimit(5);
-            return view;
-        }
-        return super.onCreateView(inflater,container,savedInstanceState);
+        View view = View.inflate(getActivity(), R.layout.fragment_explore, null);
+        mViewPager = (NoSwipeViewPager) view.findViewById(R.id.view_pager);
+        mTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
+        mViewPager.setOffscreenPageLimit(5);
+        return view;
 
     }
 

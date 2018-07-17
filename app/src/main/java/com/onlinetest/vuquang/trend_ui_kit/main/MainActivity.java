@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private DrawerLayout mDrawer;
     private NavigationView navigationView;
     private Toolbar toolbar;
-
+    SearchView search;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +58,11 @@ public class MainActivity extends BaseActivity {
         switch (item.getItemId()) {
             case android.R.id.home: {
                 mDrawer.openDrawer(GravityCompat.START);
+                if(search != null) {
+                    search.setQuery("", false);
+                    search.clearFocus();
+                    search.onActionViewCollapsed();
+                }
                 return true;
             }
             case R.id.app_bar_search: {
@@ -74,7 +79,7 @@ public class MainActivity extends BaseActivity {
         getMenuInflater().inflate(R.menu.action_main_menu, menu);
         toolbar.setTitle(R.string.explore_name);
 
-        SearchView search = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
+        search = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
 
         search.setOnSearchClickListener(new View.OnClickListener() {
             @Override

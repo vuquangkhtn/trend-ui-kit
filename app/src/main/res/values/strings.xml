@@ -34,5 +34,7 @@
     <string name="time_test">◷ 9h</string>
     <string name="sample_text">Isaace Peterson</string>
     <string name="sample_time">9h</string>
+    <string name="follow">Follow</string>
+    <string name="following">Following</string>
 
 </resources>

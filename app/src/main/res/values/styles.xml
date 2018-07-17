@@ -60,6 +60,11 @@
 
     </style>
 
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/hint_color</item>
+    </style>
+
     <style name="TextAppearance.Catalog.SectionTitle" parent="TextAppearance.AppCompat.Subhead"/>
 
     <style name="TextAppearance.Catalog.Body" parent="TextAppearance.AppCompat.Body1"/>

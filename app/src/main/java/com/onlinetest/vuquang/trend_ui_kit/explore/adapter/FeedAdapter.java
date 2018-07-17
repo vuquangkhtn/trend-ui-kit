@@ -81,7 +81,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class ShopHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.img_profile) protected ImageView imvProfile;
+        @BindView(R.id.imv_profile) protected ImageView imvProfile;
         @BindView(R.id.tv_name) protected TextView tvName;
         @BindView(R.id.tv_description) protected TextView tvDescription;
         @BindView(R.id.rv_products) protected RecyclerView rvProducts;
@@ -93,7 +93,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class BloggerHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.img_profile) protected ImageView imvProfile;
+        @BindView(R.id.imv_profile) protected ImageView imvProfile;
         @BindView(R.id.imv_banner) protected ImageView imvBanner;
         @BindView(R.id.tv_name) protected TextView tvName;
         @BindView(R.id.tv_time) protected TextView tvTime;
@@ -102,7 +102,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public BloggerHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }
