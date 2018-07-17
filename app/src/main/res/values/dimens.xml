@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="font_size_1">0.2sp</dimen>
+    <dimen name="font_size_2">1.4sp</dimen>
+    <dimen name="font_size_3">2.6sp</dimen>
+    <dimen name="font_size_4">3.8sp</dimen>
+    <dimen name="font_size_5">5.0sp</dimen>
+    <dimen name="font_size_6">7.2sp</dimen>
+    <dimen name="font_size_7">8.4sp</dimen>
+    <dimen name="font_size_8">9.6sp</dimen>
+    <dimen name="font_size_9">10.8sp</dimen>
+    <dimen name="font_size_10">12sp</dimen>
     <dimen name="font_size_11">13.2sp</dimen>
     <dimen name="font_size_12">14.4sp</dimen>
     <dimen name="font_size_13">15.6sp</dimen>

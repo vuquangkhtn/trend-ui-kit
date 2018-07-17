@@ -31,5 +31,8 @@
     <string name="search_hint">Search...</string>
     <string name="trends">Trends</string>
     <string name="feed">Feed</string>
+    <string name="time_test">◷ 9h</string>
+    <string name="sample_text">Isaace Peterson</string>
+    <string name="sample_time">9h</string>
 
 </resources>

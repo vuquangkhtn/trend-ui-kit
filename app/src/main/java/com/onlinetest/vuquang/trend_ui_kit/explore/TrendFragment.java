@@ -1,16 +1,53 @@
 package com.onlinetest.vuquang.trend_ui_kit.explore;
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
+import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
+import com.onlinetest.vuquang.trend_ui_kit.data.model.Blogger;
+import com.onlinetest.vuquang.trend_ui_kit.explore.adapter.FeedAdapter;
+import com.onlinetest.vuquang.trend_ui_kit.explore.model.BloggerItem;
+import com.onlinetest.vuquang.trend_ui_kit.explore.model.FeedItem;
+import com.onlinetest.vuquang.trend_ui_kit.explore.model.ShopItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by VuQuang on 7/16/2018.
  */
 
 public class TrendFragment extends BaseFragment {
+    public static final String TAG = "TrendFragment";
+    private RecyclerView rvFeedList;
+    private FeedAdapter mAdapter;
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = View.inflate(getActivity(), R.layout.fragment_trends, null);
+        rvFeedList = view.findViewById(R.id.rv_list_item);
+        return view;
+    }
+
     @Override
     protected void setUp(View view) {
+        rvFeedList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        mAdapter = new FeedAdapter(getContext());
+        rvFeedList.setAdapter(mAdapter);
+        List dataList = new ArrayList<FeedItem>();
+        for (int i = 0; i < 5; i++) {
+            dataList.add(new BloggerItem());
+        }
+        mAdapter.setData(dataList);
 
     }
 }

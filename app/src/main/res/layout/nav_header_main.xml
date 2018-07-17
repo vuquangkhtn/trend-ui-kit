@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/d10"
                 android:textColor="@android:color/white"
+                android:text="@string/sample_text"
                 tools:text="@tools:sample/first_names"
                 android:textSize="@dimen/d20" />
             <TextView

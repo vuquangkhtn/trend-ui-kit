@@ -15,7 +15,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorTabLayout"
+            android:background="@color/colorMain"
             app:tabIndicatorColor="@android:color/holo_blue_light"
             app:tabMode="fixed"
             app:tabGravity="fill"

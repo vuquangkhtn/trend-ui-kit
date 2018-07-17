@@ -1,9 +1,11 @@
 package com.onlinetest.vuquang.trend_ui_kit.explore;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +18,7 @@ import com.onlinetest.vuquang.trend_ui_kit.R;
  * Created by CPU10584-local on 17-Jan-18.
  */
 
-public class ExploreTabAdapter extends FragmentPagerAdapter {
+public class ExploreTabAdapter extends FragmentStatePagerAdapter{
     private Context mContext;
 
     private static final int TRENDS_FRAGMENT_POSITION = 0;
