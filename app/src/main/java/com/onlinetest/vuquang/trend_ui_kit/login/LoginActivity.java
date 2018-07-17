@@ -15,36 +15,28 @@ import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
 import com.onlinetest.vuquang.trend_ui_kit.main.MainActivity;
 import com.onlinetest.vuquang.trend_ui_kit.splash.SplashScreenActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by VuQuang on 7/14/2018.
  */
 
-public class LoginActivity extends BaseActivity implements LoginMvpView {
+public class LoginActivity extends BaseActivity {
     private static final String TAG = "LoginActivity";
 
-    private View mBtnNaviBack;
-    EditText mEdtEmail,mEdtPassword;
-    Button mBtnLogin;
+    @BindView(R.id.edt_email) EditText mEdtEmail;
+    @BindView(R.id.edt_password) EditText mEdtPassword;
+    @BindView(R.id.btn_login) Button mBtnLogin;
 
-    private LoginMvpPresenter<LoginMvpView> presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        presenter = new LoginPresenter<>();
-
-        mBtnNaviBack = findViewById(R.id.imv_navi_back);
-
-        mBtnNaviBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.onNaviBackClicked();
-            }
-        });
-
-        mEdtPassword = (EditText) findViewById(R.id.edt_password);
         mEdtPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -62,7 +54,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
             }
         });
 
-        mEdtEmail = (EditText) findViewById(R.id.edt_email);
         mEdtEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -80,24 +71,22 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
             }
         });
 
-        mBtnLogin = (Button) findViewById(R.id.btn_login);
-        mBtnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!validateForm()) {
-                    return;
-                }
-
-                String email = String.valueOf(mEdtEmail.getText());
-                String pass = String.valueOf(mEdtPassword.getText());
-
-                presenter.onSignInClicked(email, pass);
-            }
-        });
-
         checkAllEdtFilled();
-        presenter.onAttach(LoginActivity.this);
 
+    }
+
+
+    @OnClick(R.id.imv_navi_back)
+    public void onBackClicked() {
+        goToSplash();
+    }
+
+    @OnClick(R.id.btn_login)
+    public void onLoginClicked() {
+        if(!validateForm()) {
+            return;
+        }
+        goToMain();
     }
 
     private boolean validateForm() {
@@ -129,14 +118,12 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
         }
     }
 
-    @Override
     public void goToMain() {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
     }
 
-    @Override
     public void goToSplash() {
         Intent i = new Intent(this, SplashScreenActivity.class);
         startActivity(i);

@@ -26,28 +26,27 @@ import com.onlinetest.vuquang.trend_ui_kit.search.SearchFragment;
 import com.onlinetest.vuquang.trend_ui_kit.shop.ShopFragment;
 import com.onlinetest.vuquang.trend_ui_kit.wishlist.WishlistFragment;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by VuQuang on 7/14/2018.
  */
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
-    private DrawerLayout mDrawer;
-    private NavigationView navigationView;
-    private Toolbar toolbar;
+    @BindView(R.id.drawer_layout) DrawerLayout mDrawer;
+    @BindView(R.id.nav_view) NavigationView navigationView;
+    @BindView(R.id.toolbar) Toolbar toolbar;
     SearchView search;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        toolbar = findViewById(R.id.toolbar);
         this.setSupportActionBar(toolbar);
-
-        mDrawer = findViewById(R.id.drawer_layout);
-
-        navigationView = findViewById(R.id.nav_view);
         // Setup drawer view
         setDefaultFragment();
         setupDrawerContent(navigationView);

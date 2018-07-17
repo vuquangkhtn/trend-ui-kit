@@ -13,51 +13,43 @@ import android.widget.EditText;
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
 import com.onlinetest.vuquang.trend_ui_kit.login.LoginActivity;
+import com.onlinetest.vuquang.trend_ui_kit.splash.SplashScreenActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by VuQuang on 7/14/2018.
  */
 
-public class SignUpActivity extends BaseActivity implements SignUpMvpView{
+public class SignUpActivity extends BaseActivity {
     private static final String TAG = "SignUpActivity";
 
-    private SignUpPresenter mPresenter;
+    @BindView(R.id.edt_email) EditText mEdtEmail;
+    @BindView(R.id.edt_password) EditText mEdtPassword;
+    @BindView(R.id.edt_confirm_password) EditText mEdtConfirmPass;
+    @BindView(R.id.btn_create_account) Button mBtnCreateAcc;
 
-    private EditText mEdtEmail, mEdtPassword, mEdtConfirmPass;
-    private Button mBtnCreateAcc;
-    private View mBtnNaviBack;
+    @OnClick(R.id.btn_create_account) public void onCreateAccountClicked() {
+        if(!validateForm() || !isValid()) {
+            showSnackBar("Signup Failed");
+        } else {
+            showSnackBar("Signup Successful");
+            goToLogin();
+
+        }
+    }
+
+    @OnClick(R.id.imv_navi_back) public void onNaviBackClicked() {
+        goToSplash();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-        mPresenter = new SignUpPresenter();
-
-        mPresenter.onAttach(SignUpActivity.this);
-
-        mBtnNaviBack = findViewById(R.id.imv_navi_back);
-        mBtnNaviBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPresenter.onNaviBackClicked();
-            }
-        });
-
-        mBtnCreateAcc = findViewById(R.id.btn_create_account);
-        mBtnCreateAcc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!validateForm()) {
-                    return;
-                }
-                String email = mEdtEmail.getText().toString();
-                String password = mEdtPassword.getText().toString();
-                mPresenter.onSignupClicked(email, password);
-            }
-        });
-
-        mEdtEmail = findViewById(R.id.edt_email);
+        ButterKnife.bind(this);
         mEdtEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -75,7 +67,6 @@ public class SignUpActivity extends BaseActivity implements SignUpMvpView{
             }
         });
 
-        mEdtPassword = findViewById(R.id.edt_password);
         mEdtPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -93,7 +84,6 @@ public class SignUpActivity extends BaseActivity implements SignUpMvpView{
             }
         });
 
-        mEdtConfirmPass = findViewById(R.id.edt_confirm_password);
         mEdtConfirmPass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -124,7 +114,13 @@ public class SignUpActivity extends BaseActivity implements SignUpMvpView{
         }
     }
 
-    @Override
+    public void goToSplash() {
+        Intent intent = new Intent(this, SplashScreenActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        finish();
+    }
+
     public void goToLogin() {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -132,7 +128,6 @@ public class SignUpActivity extends BaseActivity implements SignUpMvpView{
         finish();
     }
 
-    @Override
     public boolean isValid() {
         if(mEdtConfirmPass.getText().toString().equals(mEdtPassword.getText().toString())) {
             return true;

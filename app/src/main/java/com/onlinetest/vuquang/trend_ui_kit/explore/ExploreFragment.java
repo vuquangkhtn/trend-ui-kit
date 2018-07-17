@@ -13,23 +13,24 @@ import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
 import com.onlinetest.vuquang.trend_ui_kit.view.NoSwipeViewPager;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by VuQuang on 7/16/2018.
  */
 
 public class ExploreFragment extends BaseFragment{
     public static final String TAG = "ExploreFragment";
-    NoSwipeViewPager mViewPager;
+    @BindView(R.id.view_pager) NoSwipeViewPager mViewPager;
+    @BindView(R.id.tab_layout) TabLayout mTabLayout;
     ExploreTabAdapter mTabAdapter;
-    TabLayout mTabLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_explore, null);
-        mViewPager = (NoSwipeViewPager) view.findViewById(R.id.view_pager);
-        mTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        mViewPager.setOffscreenPageLimit(5);
+        ButterKnife.bind(this, view);
         return view;
 
     }
@@ -37,6 +38,7 @@ public class ExploreFragment extends BaseFragment{
     @Override
     protected void setUp(View view) {
         mTabAdapter = new ExploreTabAdapter(getFragmentManager(), this.getContext());
+        mViewPager.setOffscreenPageLimit(5);
         mViewPager.setAdapter(mTabAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);

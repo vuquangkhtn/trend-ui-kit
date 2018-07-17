@@ -24,8 +24,8 @@ import butterknife.ButterKnife;
  */
 
 public class SearchFragment extends BaseFragment {
-    TabLayout mTabLayout;
-    RecyclerView rvItemList;
+    @BindView(R.id.tab_layout) TabLayout mTabLayout;
+    @BindView(R.id.rv_search_items) RecyclerView rvItemList;
     SearchAdapter mAdapter;
 
     String[] tabList = new String[] {"Items", "Shops", "Bloggers", "Tags"};
@@ -34,8 +34,7 @@ public class SearchFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_search, null);
-        mTabLayout = view.findViewById(R.id.tab_layout);
-        rvItemList = view.findViewById(R.id.rv_search_items);
+        ButterKnife.bind(this, view);
         return view;
 
     }

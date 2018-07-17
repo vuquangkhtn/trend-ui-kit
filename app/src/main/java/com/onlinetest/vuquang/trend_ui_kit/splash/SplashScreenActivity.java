@@ -15,53 +15,37 @@ import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
 import com.onlinetest.vuquang.trend_ui_kit.login.LoginActivity;
 import com.onlinetest.vuquang.trend_ui_kit.signup.SignUpActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by VuQuang on 7/14/2018.
  */
 
-public class SplashScreenActivity extends BaseActivity implements SplashMvpView{
+public class SplashScreenActivity extends BaseActivity {
     private static final String TAG = "SplashScreenActivity";
-
-    private SplashMvpPresenter<SplashMvpView> presenter;
-    Button mBtnLogin, mBtnSignUp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        presenter = new SplashPresenter<>();
-        mBtnLogin = (Button) findViewById(R.id.btn_login);
-        mBtnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            presenter.onSignInClicked();
-            }
-        });
-
-        mBtnSignUp = (Button) findViewById(R.id.btn_create_account);
-        mBtnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presenter.onSignUpClicked();
-            }
-        });
-
-        presenter.onAttach(SplashScreenActivity.this);
+        ButterKnife.bind(this);
 
     }
 
-    @Override
-    public void goToSignInScreen() {
+    @OnClick(R.id.btn_login)
+    public void onLoginClicked() {
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
         finish();
     }
 
-    @Override
-    public void goToSignUpScreen() {
+    @OnClick(R.id.btn_create_account)
+    public void onSignUpClicked() {
         Intent i = new Intent(this, SignUpActivity.class);
         startActivity(i);
         finish();
     }
+
 }

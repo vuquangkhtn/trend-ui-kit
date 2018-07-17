@@ -22,19 +22,22 @@ import com.onlinetest.vuquang.trend_ui_kit.explore.model.ShopItem;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by VuQuang on 7/16/2018.
  */
 
 public class TrendFragment extends BaseFragment {
     public static final String TAG = "TrendFragment";
-    private RecyclerView rvFeedList;
+    @BindView(R.id.rv_list_item) RecyclerView rvFeedList;
     private FeedAdapter mAdapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_trends, null);
-        rvFeedList = view.findViewById(R.id.rv_list_item);
+        ButterKnife.bind(this, view);
         return view;
     }
 

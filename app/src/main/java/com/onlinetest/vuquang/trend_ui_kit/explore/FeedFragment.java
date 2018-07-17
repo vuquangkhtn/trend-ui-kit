@@ -22,21 +22,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by VuQuang on 7/16/2018.
  */
 
 public class FeedFragment extends BaseFragment {
     public static final String TAG = "FeedFragment";
-    private RecyclerView rvFeedList;
+    @BindView(R.id.rv_list_item) RecyclerView rvFeedList;
     private FeedAdapter mAdapter;
     private List dataList;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_feed, null);
-        rvFeedList = view.findViewById(R.id.rv_list_item);
-
+        ButterKnife.bind(this, view);
         return view;
     }
 
