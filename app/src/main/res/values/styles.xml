@@ -60,14 +60,18 @@
 
     </style>
 
-    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+    <style name="TextAppearance.CustomTab" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textColor">@color/hint_color</item>
     </style>
 
-    <style name="TextAppearance.Catalog.SectionTitle" parent="TextAppearance.AppCompat.Subhead"/>
+    <style name="TextAppearance.Collapsing.SectionTitle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
 
-    <style name="TextAppearance.Catalog.Body" parent="TextAppearance.AppCompat.Body1"/>
+    <style name="TextAppearance.Collapsing.ExpandedTitle" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
 
     <style name="TextAppearance.Catalog.ListTitle" parent="TextAppearance.AppCompat.Body1"/>
 

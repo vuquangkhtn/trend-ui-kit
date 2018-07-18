@@ -21,7 +21,7 @@
             app:tabMode="fixed"
             app:tabGravity="fill"
             app:tabSelectedTextColor="@android:color/white"
-            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabTextAppearance="@style/TextAppearance.CustomTab"
             app:tabTextColor="@color/hint_color"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_search_items"

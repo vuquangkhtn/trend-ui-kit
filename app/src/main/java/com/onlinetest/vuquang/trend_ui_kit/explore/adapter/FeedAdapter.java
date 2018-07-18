@@ -30,6 +30,8 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<FeedItem> feedList;
     private Context mContext;
 
+    private ExploreItemListener exploreItemListener;
+
     public FeedAdapter(Context context) {
         this.mContext = context;
     }
@@ -61,12 +63,24 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         switch (holder.getItemViewType()) {
             case SHOP_TYPE: {
                 ShopHolder shopHolder = (ShopHolder) holder;
-                ShopItem item = (ShopItem) feedList.get(position);
+                final ShopItem item = (ShopItem) feedList.get(position);
+                shopHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        exploreItemListener.onShopItemClicked(item);
+                    }
+                });
                 return;
             }
             case BLOGGER_TYPE: {
                 BloggerHolder bloggerHolder = (BloggerHolder) holder;
-                BloggerItem item = (BloggerItem) feedList.get(position);
+                final BloggerItem item = (BloggerItem) feedList.get(position);
+                bloggerHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        exploreItemListener.onBlogItemClicked(item);
+                    }
+                });
                 return;
             }
         }
@@ -104,5 +118,14 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public void setExploreItemListener(ExploreItemListener exploreItemListener) {
+        this.exploreItemListener = exploreItemListener;
+    }
+
+    public interface ExploreItemListener {
+        void onBlogItemClicked(BloggerItem item);
+        void onShopItemClicked(ShopItem item);
     }
 }

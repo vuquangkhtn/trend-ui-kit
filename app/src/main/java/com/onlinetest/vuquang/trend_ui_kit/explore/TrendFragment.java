@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
 import com.onlinetest.vuquang.trend_ui_kit.data.model.Blogger;
+import com.onlinetest.vuquang.trend_ui_kit.dialog.ArticleDialog;
 import com.onlinetest.vuquang.trend_ui_kit.explore.adapter.FeedAdapter;
 import com.onlinetest.vuquang.trend_ui_kit.explore.model.BloggerItem;
 import com.onlinetest.vuquang.trend_ui_kit.explore.model.FeedItem;
@@ -38,14 +39,26 @@ public class TrendFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_trends, null);
         ButterKnife.bind(this, view);
+        rvFeedList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        mAdapter = new FeedAdapter(getContext());
+        rvFeedList.setAdapter(mAdapter);
+        mAdapter.setExploreItemListener(new FeedAdapter.ExploreItemListener() {
+            @Override
+            public void onBlogItemClicked(BloggerItem item) {
+                (new ArticleDialog()).show(getChildFragmentManager(), TAG);
+            }
+
+            @Override
+            public void onShopItemClicked(ShopItem item) {
+                (new ArticleDialog()).show(getChildFragmentManager(), TAG);
+            }
+        });
         return view;
     }
 
     @Override
     protected void setUp(View view) {
-        rvFeedList.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        mAdapter = new FeedAdapter(getContext());
-        rvFeedList.setAdapter(mAdapter);
+
         List dataList = new ArrayList<FeedItem>();
         for (int i = 0; i < 5; i++) {
             dataList.add(new BloggerItem());

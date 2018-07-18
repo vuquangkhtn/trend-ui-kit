@@ -46,40 +46,16 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        this.setSupportActionBar(toolbar);
-        // Setup drawer view
+        setupToolbar();
         setDefaultFragment();
         setupDrawerContent(navigationView);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home: {
-                mDrawer.openDrawer(GravityCompat.START);
-                if(search != null) {
-                    search.setQuery("", false);
-                    search.clearFocus();
-                    search.onActionViewCollapsed();
-                }
-                return true;
-            }
-            case R.id.app_bar_search: {
-                Log.d(TAG,"test");
-                changeFragment(new SearchFragment(), item);
-                return true;
-            }
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.action_main_menu, menu);
+    private void setupToolbar() {
         toolbar.setTitle(R.string.explore_name);
+        toolbar.inflateMenu(R.menu.action_main_menu);
 
-        search = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
-
+        search = (SearchView) toolbar.getMenu().findItem(R.id.app_bar_search).getActionView();
         search.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +64,17 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        return super.onCreateOptionsMenu(menu);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawer.openDrawer(GravityCompat.START);
+                if(search != null) {
+                    search.setQuery("", false);
+                    search.clearFocus();
+                    search.onActionViewCollapsed();
+                }
+            }
+        });
     }
 
     private void setDefaultFragment() {

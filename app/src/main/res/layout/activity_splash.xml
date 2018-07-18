@@ -25,6 +25,7 @@
             android:layout_marginBottom="@dimen/d20"
             android:textSize="50sp"
             android:textColor="@android:color/white"
+            android:textStyle="bold"
             android:text="@string/company_name"
             />
         <TextView

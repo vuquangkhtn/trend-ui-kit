@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/long_sample_text" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d220"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background"/>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d400"
+        android:background="@color/colorWhite">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedTitleTextAppearance="@style/TextAppearance.Collapsing.SectionTitle"
+            app:contentScrim="@color/colorMain"
+            app:expandedTitleGravity="center"
+            app:expandedTitleMarginBottom="24dp"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.Collapsing.ExpandedTitle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            <ImageView
+                android:id="@+id/expandedImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d360"
+                android:src="@drawable/background"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d50"
+                app:navigationIcon="@drawable/ic_back"
+                app:layout_collapseMode = "pin"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_gravity="bottom|center"
+                app:layout_collapseMode="parallax">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="@dimen/d25"
+                        android:layout_height="@dimen/d25"
+                        android:src="@drawable/ic_view"/>
+                    <TextView
+                        android:id="@+id/tv_view_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/font_size_11"
+                        android:text="15.1k"
+                        tools:text="15.1k"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/d10"
+                    android:paddingRight="@dimen/d10"
+                    android:paddingTop="@dimen/d0"
+                    android:paddingBottom="@dimen/d0"
+                    android:layout_marginTop="@dimen/d10"
+                    android:text="@string/sample_text"
+                    android:textSize="@dimen/font_size_13"
+                    android:background="@drawable/shape_round_strike"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="@dimen/d80"
+                    android:layout_height="@dimen/d80"
+                    android:layout_marginTop="@dimen/d10"
+                    android:src="@drawable/img_profile"/>
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>
