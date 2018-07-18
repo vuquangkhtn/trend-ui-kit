@@ -43,5 +43,6 @@
     <string name="sample_time">9h</string>
     <string name="follow">Follow</string>
     <string name="following">Following</string>
+    <string name="attachment_items">attachment items</string>
 
 </resources>

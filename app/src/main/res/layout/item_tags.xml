@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_tag_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/d10"
+    android:paddingRight="@dimen/d10"
+    android:paddingTop="@dimen/d0"
+    android:paddingBottom="@dimen/d0"
+    android:textColor="@color/colorMainBlue"
+    tools:text="@string/sample_text"
+    android:background="@drawable/shape_round_blue"/>

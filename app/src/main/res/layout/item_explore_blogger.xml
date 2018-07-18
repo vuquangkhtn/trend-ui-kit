@@ -48,13 +48,13 @@
                 android:layout_width="@dimen/d20"
                 android:layout_height="@dimen/d20"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="@dimen/d3"
                 android:src="@drawable/ic_time"/>
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/d5"
                 android:textColor="@color/hint_color"
                 android:textSize="@dimen/font_size_10"
                 android:text="@string/sample_time"
@@ -95,9 +95,9 @@
             <ImageView
                 android:layout_width="@dimen/d25"
                 android:layout_height="@dimen/d25"
-                android:src="@drawable/ic_view"/>
+                android:src="@drawable/ic_like"/>
             <TextView
-                android:id="@+id/tv_view_count"
+                android:id="@+id/tv_like_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/d5"

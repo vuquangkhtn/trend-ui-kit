@@ -13,17 +13,153 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
             android:orientation="vertical"
+            android:layout_marginTop="@dimen/d20"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/long_sample_text" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/d15"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_size_19"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:text="What will be trends of spring 2016?" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/long_sample_text"
+                    android:textColor="@color/colorBlack" />
+            </LinearLayout>
+
+
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/d220"
+                android:layout_height="@dimen/d200"
+                android:layout_marginTop="@dimen/d20"
                 android:scaleType="centerCrop"
                 android:src="@drawable/background"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/d20"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d250">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/d10"
+                    android:layout_marginRight="@dimen/d10"
+                    android:layout_marginBottom="@dimen/d10"
+                    android:textColor="@color/colorBlack"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/font_size_13"
+                    android:text="@string/attachment_items"/>
+                <include layout="@layout/item_products_list"/>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_tag_list"
+                android:layout_width="match_parent"
+                android:background="@color/background_color"
+                android:layout_height="@dimen/d100"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:layout_marginTop="@dimen/d20"
+                tools:listitem = "@layout/item_tags"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/d20"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:layout_height="1dp"
+                android:background="@color/background_color"/>
+            <FrameLayout
+                android:layout_marginTop="@dimen/d20"
+                android:layout_marginBottom="@dimen/d40"
+                android:layout_marginLeft="@dimen/d10"
+                android:layout_marginRight="@dimen/d10"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d30">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content">
+                    <ImageButton
+                        android:id="@+id/imb_unlike"
+                        android:layout_width="@dimen/d25"
+                        android:layout_height="@dimen/d25"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        android:background="@drawable/ic_like_color"/>
+                    <ImageButton
+                        android:id="@+id/imb_like"
+                        android:layout_width="@dimen/d25"
+                        android:layout_height="@dimen/d25"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/ic_like"/>
+                    <TextView
+                        android:id="@+id/tv_like_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/font_size_10"
+                        android:text="15.1k"
+                        tools:text="15.1k"/>
+                    <ImageView
+                        android:layout_width="@dimen/d25"
+                        android:layout_height="@dimen/d25"
+                        android:layout_marginLeft="@dimen/d15"
+                        android:src="@drawable/ic_comment"/>
+                    <TextView
+                        android:id="@+id/tv_comment_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/font_size_10"
+                        android:text="15.1k"
+                        tools:text="5.1k"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="right">
+                    <ImageView
+                        android:layout_width="@dimen/d25"
+                        android:layout_height="@dimen/d25"
+                        android:layout_marginLeft="@dimen/d15"
+                        android:src="@drawable/ic_time"/>
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/d5"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/font_size_10"
+                        android:text="@string/sample_time"
+                        tools:text="9h"/>
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
@@ -103,6 +239,5 @@
                     android:src="@drawable/img_profile"/>
             </LinearLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
-
     </android.support.design.widget.AppBarLayout>
 </android.support.design.widget.CoordinatorLayout>

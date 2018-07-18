@@ -51,14 +51,6 @@
                 android:text="added 5 items"
                 tools:text="added 5 items"/>
         </LinearLayout>
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_products"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="@dimen/d10"
-            android:paddingLeft="@dimen/d10"
-            android:paddingBottom="@dimen/d10"
-            android:background="@color/colorMain"
-            tools:listitem = "@layout/item_product_only"/>
+        <include layout="@layout/item_products_list"/>
     </LinearLayout>
 </android.support.v7.widget.CardView>

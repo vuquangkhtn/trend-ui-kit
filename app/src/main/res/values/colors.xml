@@ -13,4 +13,5 @@
     <color name="btn_disabled">#77BDBDBD</color>
 
     <color name="color_action_bar">#4F9CDF</color>
+    <color name="colorBlack">#000000</color>
 </resources>

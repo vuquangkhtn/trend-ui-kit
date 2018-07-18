@@ -111,7 +111,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @BindView(R.id.imv_banner) protected ImageView imvBanner;
         @BindView(R.id.tv_name) protected TextView tvName;
         @BindView(R.id.tv_time) protected TextView tvTime;
-        @BindView(R.id.tv_view_count) protected TextView tvViewCount;
+        @BindView(R.id.tv_like_count) protected TextView tvLikeCount;
         @BindView(R.id.tv_comment_count) protected TextView tvCommentCount;
 
         public BloggerHolder(View itemView) {
