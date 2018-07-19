@@ -26,7 +26,7 @@
     <string name="wishlist_name">Wishlist</string>
     <string name="explore_name">Explore</string>
     <string name="comment_name">Comment</string>
-    <string name="search_name">Search</string>
+    <string name="search">Search</string>
     <string name="edit_profile">Edit profile</string>
     <string name="search_hint">Search...</string>
     <string name="trends">Trends</string>
@@ -44,5 +44,7 @@
     <string name="follow">Follow</string>
     <string name="following">Following</string>
     <string name="attachment_items">attachment items</string>
+    <string name="filter">Filter</string>
+    <string name="cart">Cart</string>
 
 </resources>

@@ -18,18 +18,18 @@
             android:layout_height="wrap_content"
             android:background="@color/colorMain"
             app:tabIndicatorColor="@android:color/holo_blue_light"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabGravity="fill"
             app:tabSelectedTextColor="@android:color/white"
             app:tabTextAppearance="@style/TextAppearance.CustomTab"
             app:tabTextColor="@color/hint_color"/>
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_search_items"
+            android:id="@+id/rv_product_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/d5"
             android:paddingLeft="@dimen/d5"
             android:background="@color/background_color"
-            tools:listitem = "@layout/item_search"/>
+            tools:listitem = "@layout/item_product_with_price"/>
     </LinearLayout>
 </FrameLayout>

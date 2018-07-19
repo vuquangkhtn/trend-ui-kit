@@ -1,6 +1,5 @@
 package com.onlinetest.vuquang.trend_ui_kit.main;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -9,11 +8,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.view.menu.MenuItemImpl;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -23,7 +20,7 @@ import com.onlinetest.vuquang.trend_ui_kit.comment.CommentFragment;
 import com.onlinetest.vuquang.trend_ui_kit.explore.ExploreFragment;
 import com.onlinetest.vuquang.trend_ui_kit.order.OrderFragment;
 import com.onlinetest.vuquang.trend_ui_kit.search.SearchFragment;
-import com.onlinetest.vuquang.trend_ui_kit.shop.ShopFragment;
+import com.onlinetest.vuquang.trend_ui_kit.store.StoreFragment;
 import com.onlinetest.vuquang.trend_ui_kit.wishlist.WishlistFragment;
 
 import butterknife.BindView;
@@ -51,9 +48,18 @@ public class MainActivity extends BaseActivity {
         setupDrawerContent(navigationView);
     }
 
+    public void setVisibleForAppBarIcon(boolean isEnable, int id) {
+        MenuItem item = toolbar.getMenu().findItem(id);
+        item.setVisible(isEnable);
+    }
+
     private void setupToolbar() {
         toolbar.setTitle(R.string.explore_name);
         toolbar.inflateMenu(R.menu.action_main_menu);
+
+        setVisibleForAppBarIcon(true,R.id.app_bar_search);
+        setVisibleForAppBarIcon(false, R.id.app_bar_cart);
+        setVisibleForAppBarIcon(false, R.id.app_bar_filter);
 
         search = (SearchView) toolbar.getMenu().findItem(R.id.app_bar_search).getActionView();
         search.setOnSearchClickListener(new View.OnClickListener() {
@@ -105,7 +111,7 @@ public class MainActivity extends BaseActivity {
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_shop:
-                fragmentClass = ShopFragment.class;
+                fragmentClass = StoreFragment.class;
                 break;
             case R.id.nav_orders:
                 fragmentClass = OrderFragment.class;

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
+import com.onlinetest.vuquang.trend_ui_kit.main.MainActivity;
 import com.onlinetest.vuquang.trend_ui_kit.view.NoSwipeViewPager;
 
 import butterknife.BindView;
@@ -37,6 +38,7 @@ public class ExploreFragment extends BaseFragment{
 
     @Override
     protected void setUp(View view) {
+        setupToolbar();
         mTabAdapter = new ExploreTabAdapter(getFragmentManager(), this.getContext());
         mViewPager.setOffscreenPageLimit(5);
         mViewPager.setAdapter(mTabAdapter);
@@ -50,5 +52,15 @@ public class ExploreFragment extends BaseFragment{
         }
 
         mTabAdapter.notifyDataSetChanged();
+    }
+
+    private void setupToolbar() {
+        if(getActivity() instanceof MainActivity) {
+            MainActivity activity = (MainActivity) getActivity();
+
+            activity.setVisibleForAppBarIcon(true,R.id.app_bar_search);
+            activity.setVisibleForAppBarIcon(false, R.id.app_bar_cart);
+            activity.setVisibleForAppBarIcon(false, R.id.app_bar_filter);
+        }
     }
 }

@@ -22,9 +22,6 @@ import butterknife.ButterKnife;
  */
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchItemHolder> {
-    private final int BLOGGER_TYPE = 0;
-    private final int SHOP_TYPE = 1;
-
     private List<SearchItem> searchItemList;
     private Context mContext;
 
