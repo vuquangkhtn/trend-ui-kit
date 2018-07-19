@@ -54,10 +54,10 @@ public class FeedFragment extends BaseFragment {
 
             @Override
             public void onShopItemClicked(ShopItem item) {
-                ArticleDialog articleDialog = new ArticleDialog();
-                Bundle args = new Bundle();
-                args.putParcelable("Article", item);
-                articleDialog.show(getChildFragmentManager(), TAG);
+//                ArticleDialog articleDialog = new ArticleDialog();
+//                Bundle args = new Bundle();
+//                args.putParcelable("Article", item);
+//                articleDialog.show(getChildFragmentManager(), TAG);
             }
         });
         return view;

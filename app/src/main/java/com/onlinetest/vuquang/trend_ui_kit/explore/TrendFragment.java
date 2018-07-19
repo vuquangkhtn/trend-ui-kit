@@ -50,7 +50,7 @@ public class TrendFragment extends BaseFragment {
 
             @Override
             public void onShopItemClicked(ShopItem item) {
-                (new ArticleDialog()).show(getChildFragmentManager(), TAG);
+//                (new ArticleDialog()).show(getChildFragmentManager(), TAG);
             }
         });
         return view;
