@@ -9,4 +9,4 @@
     android:paddingLeft="@dimen/d10"
     android:paddingBottom="@dimen/d10"
     android:background="@color/colorMain"
-    tools:listitem = "@layout/item_product_only"/>
+    tools:listitem = "@layout/item_product_img_only"/>

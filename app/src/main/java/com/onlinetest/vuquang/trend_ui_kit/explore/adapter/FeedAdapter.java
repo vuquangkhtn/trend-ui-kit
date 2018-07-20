@@ -53,9 +53,9 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if(viewType == SHOP_TYPE) {
-            return new ShopHolder(LayoutInflater.from(mContext).inflate(R.layout.item_explore_shop, parent, false));
+            return new ShopHolder(LayoutInflater.from(mContext).inflate(R.layout.item_feed_shop, parent, false));
         }
-        return new BloggerHolder(LayoutInflater.from(mContext).inflate(R.layout.item_explore_blogger, parent, false));
+        return new BloggerHolder(LayoutInflater.from(mContext).inflate(R.layout.item_feed_blogger, parent, false));
     }
 
     @Override

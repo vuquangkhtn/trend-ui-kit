@@ -24,6 +24,7 @@ import butterknife.ButterKnife;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchItemHolder> {
     private List<SearchItem> searchItemList;
     private Context mContext;
+    private SearchItemListener searchItemListener;
 
     public SearchAdapter(Context context) {
         this.mContext = context;
@@ -42,6 +43,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchItem
 
     @Override
     public void onBindViewHolder(@NonNull final SearchItemHolder holder, int position) {
+        final SearchItem item = searchItemList.get(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchItemListener.onSearchItemClicked(item);
+            }
+        });
+
         final Button btnFollow = holder.btnFollow;
         final Button btnUnfollow = holder.btnUnfollow;
         btnFollow.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +90,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchItem
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public void setSearchItemListener(SearchItemListener searchItemListener) {
+        this.searchItemListener = searchItemListener;
+    }
+
+    public interface SearchItemListener {
+        void onSearchItemClicked(SearchItem item);
     }
 
 }

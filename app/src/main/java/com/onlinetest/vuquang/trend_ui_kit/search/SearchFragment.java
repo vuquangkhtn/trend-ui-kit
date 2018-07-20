@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
+import com.onlinetest.vuquang.trend_ui_kit.dialog.ProfileDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ import butterknife.ButterKnife;
  */
 
 public class SearchFragment extends BaseFragment {
+    private static final String TAG = "SearchFragment";
     @BindView(R.id.tab_layout) TabLayout mTabLayout;
     @BindView(R.id.rv_search_items) RecyclerView rvItemList;
     SearchAdapter mAdapter;
@@ -35,12 +37,6 @@ public class SearchFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(), R.layout.fragment_search, null);
         ButterKnife.bind(this, view);
-        return view;
-
-    }
-
-    @Override
-    protected void setUp(View view) {
         for (int i = 0; i < tabList.length; i++) {
             TabLayout.Tab tab = mTabLayout.newTab().setText(tabList[i]);
             mTabLayout.addTab(tab);
@@ -66,6 +62,20 @@ public class SearchFragment extends BaseFragment {
         rvItemList.setLayoutManager(new GridLayoutManager(getContext(), 2));
         mAdapter = new SearchAdapter(getContext());
         rvItemList.setAdapter(mAdapter);
+        
+        mAdapter.setSearchItemListener(new SearchAdapter.SearchItemListener() {
+            @Override
+            public void onSearchItemClicked(SearchItem item) {
+                (new ProfileDialog()).show(getChildFragmentManager(),TAG);
+            }
+        });
+        return view;
+
+    }
+
+    @Override
+    protected void setUp(View view) {
+        
         updateData();
     }
 

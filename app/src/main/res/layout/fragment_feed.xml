@@ -6,6 +6,6 @@
     android:background="@color/background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/d5"
-    tools:listitem = "@layout/item_explore_blogger">
+    android:paddingBottom="@dimen/d10"
+    tools:listitem = "@layout/item_feed_blogger">
 </android.support.v7.widget.RecyclerView>
