@@ -46,5 +46,7 @@
     <string name="attachment_items">attachment items</string>
     <string name="filter">Filter</string>
     <string name="cart">Cart</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="continue_order">Continue Order</string>
 
 </resources>

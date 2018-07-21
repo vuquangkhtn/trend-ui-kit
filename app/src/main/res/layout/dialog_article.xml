@@ -226,7 +226,7 @@
                     android:layout_marginTop="@dimen/d10"
                     android:text="@string/sample_text"
                     android:textSize="@dimen/font_size_13"
-                    android:background="@drawable/shape_round_strike"/>
+                    android:background="@drawable/shape_round_strike_white"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="@dimen/d80"
