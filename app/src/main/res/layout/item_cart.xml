@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="@dimen/d160"
-    android:layout_marginLeft="@dimen/d20">
+    android:layout_marginLeft="@dimen/d10">
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imv_picture"
         android:layout_width="@dimen/d100"
@@ -53,8 +53,8 @@
             tools:text="@tools:sample/lorem/random"/>
         <TextView
             android:id="@+id/tv_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/d10"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font_size_18"
