@@ -83,6 +83,7 @@ public class StoreFragment extends BaseFragment {
             activity.setVisibleForAppBarIcon(false,R.id.app_bar_search);
             activity.setVisibleForAppBarIcon(true, R.id.app_bar_cart);
             activity.setVisibleForAppBarIcon(true, R.id.app_bar_filter);
+
         }
     }
 

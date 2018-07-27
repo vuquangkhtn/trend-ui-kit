@@ -17,6 +17,7 @@ import android.view.View;
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
 import com.onlinetest.vuquang.trend_ui_kit.comment.CommentFragment;
+import com.onlinetest.vuquang.trend_ui_kit.dialog.CartDialog;
 import com.onlinetest.vuquang.trend_ui_kit.explore.ExploreFragment;
 import com.onlinetest.vuquang.trend_ui_kit.order.OrderFragment;
 import com.onlinetest.vuquang.trend_ui_kit.search.SearchFragment;
@@ -67,6 +68,21 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 Log.d(TAG,"test search");
                 changeFragment(new SearchFragment(),navigationView.getMenu().findItem(R.id.nav_search));
+            }
+        });
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.app_bar_cart: {
+                        Log.d(TAG,"test cart");
+                        CartDialog cartDialog = new CartDialog();
+                        cartDialog.show(getSupportFragmentManager(),TAG);
+                        return true;
+                    }
+                }
+                return false;
             }
         });
 
