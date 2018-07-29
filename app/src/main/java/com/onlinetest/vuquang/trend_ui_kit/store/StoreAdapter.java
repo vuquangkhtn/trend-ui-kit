@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
@@ -21,6 +22,9 @@ import butterknife.ButterKnife;
  */
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHolder> {
+    private final int SALE_TYPE = 0;
+    private final int NORMAL_TYPE = 1;
+
     private List<StoreItem> storeItemList;
     private Context mContext;
 
@@ -33,6 +37,16 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
         notifyDataSetChanged();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        StoreItem item = storeItemList.get(position);
+        if(item.isSale) {
+            return SALE_TYPE;
+        } else {
+            return NORMAL_TYPE;
+        }
+    }
+
     @NonNull
     @Override
     public StoreItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,7 +55,20 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
 
     @Override
     public void onBindViewHolder(@NonNull final StoreItemHolder holder, int position) {
-
+        switch (holder.getItemViewType()) {
+            case SALE_TYPE: {
+                holder.imvSale.setVisibility(View.VISIBLE);
+                holder.containerSaleText.setVisibility(View.VISIBLE);
+                holder.tvPrice.setVisibility(View.GONE);
+                break;
+            }
+            case NORMAL_TYPE: {
+                holder.imvSale.setVisibility(View.GONE);
+                holder.containerSaleText.setVisibility(View.GONE);
+                holder.tvPrice.setVisibility(View.VISIBLE);
+                break;
+            }
+        }
     }
 
     @Override
@@ -56,6 +83,10 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
         @BindView(R.id.imv_picture) protected ImageView imvProfile;
         @BindView(R.id.tv_name) protected TextView tvName;
         @BindView(R.id.tv_price) protected TextView tvPrice;
+        @BindView(R.id.imv_sale) protected ImageView imvSale;
+        @BindView(R.id.tv_price_sale) protected TextView tvSalePrice;
+        @BindView(R.id.tv_old_price) protected TextView tvOldPrice;
+        @BindView(R.id.container_price_sale) protected LinearLayout containerSaleText;
 
         public StoreItemHolder(View itemView) {
             super(itemView);

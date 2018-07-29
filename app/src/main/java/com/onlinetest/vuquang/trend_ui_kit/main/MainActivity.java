@@ -23,7 +23,6 @@ import com.onlinetest.vuquang.trend_ui_kit.explore.ExploreFragment;
 import com.onlinetest.vuquang.trend_ui_kit.order.OrderFragment;
 import com.onlinetest.vuquang.trend_ui_kit.search.SearchFragment;
 import com.onlinetest.vuquang.trend_ui_kit.store.StoreFragment;
-import com.onlinetest.vuquang.trend_ui_kit.wishlist.WishlistFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -138,9 +137,6 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.nav_orders:
                 fragmentClass = OrderFragment.class;
-                break;
-            case R.id.nav_wishlist:
-                fragmentClass = WishlistFragment.class;
                 break;
             case R.id.nav_explore:
                 fragmentClass = ExploreFragment.class;

@@ -89,7 +89,7 @@ public class StoreFragment extends BaseFragment {
 
     private void updateData() {
         List items = new ArrayList();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             items.add(new StoreItem());
         }
         mAdapter.setData(items);
