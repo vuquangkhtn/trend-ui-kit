@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/d30"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="@dimen/d30"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_btn_uncheck"/>
+    <TextView
+        android:id="@+id/tv_check"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/d20"
+        android:layout_marginStart="@dimen/d20"
+        android:textSize="@dimen/font_size_15"
+        android:gravity="center"
+        android:text="@string/most_view"
+        android:textColor="@color/colorBlack" />
+</LinearLayout>

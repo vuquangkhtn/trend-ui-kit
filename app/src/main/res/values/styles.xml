@@ -14,8 +14,6 @@
     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="catalogToolbarStyle">@style/Widget.Catalog.Toolbar</item>
-        <item name="catalogToolbarWithCloseButtonStyle">@style/Widget.Catalog.Toolbar.Explore</item>
     </style>
 
     <style name="DialogNoAnimation">
@@ -40,11 +38,7 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-    </style>
-
-    <style name="Widget.Catalog.Toolbar.Explore" parent="Widget.Catalog.Toolbar">
-        <item name="navigationContentDescription">@string/toolbar_navigation_close_description</item>
-        <item name="navigationIcon">@drawable/ic_menu</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
@@ -63,6 +57,11 @@
     <style name="TextAppearance.CustomTab" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
         <item name="android:textColor">@color/hint_color</item>
+    </style>
+
+    <style name="SeekBarColor"
+        parent="Widget.AppCompat.SeekBar">
+        <item name="colorAccent">@color/colorMainBlue</item>
     </style>
 
     <style name="TextAppearance.Collapsing.SectionTitle" parent="TextAppearance.AppCompat.Title">

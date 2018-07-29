@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--<item>-->
+        <!--<shape>-->
+            <!--<gradient-->
+                <!--android:endColor="#fff"-->
+                <!--android:startColor="#f00"-->
+                <!--android:useLevel="true" />-->
+        <!--</shape>-->
+    <!--</item>-->
+    <!--<item android:id="@android:id/background">-->
+        <!--<clip>-->
+            <!--<bitmap android:src="@drawable/img_bg_time" />-->
+        <!--</clip>-->
+    <!--</item>-->
+    <item android:id="@android:id/progress">
+        <clip>
+            <color android:color="@color/colorMainBlue"/>
+        </clip>
+    </item>
+</layer-list>

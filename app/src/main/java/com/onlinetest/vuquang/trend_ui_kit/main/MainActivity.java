@@ -18,6 +18,7 @@ import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
 import com.onlinetest.vuquang.trend_ui_kit.comment.CommentFragment;
 import com.onlinetest.vuquang.trend_ui_kit.dialog.CartDialog;
+import com.onlinetest.vuquang.trend_ui_kit.dialog.FilterDialog;
 import com.onlinetest.vuquang.trend_ui_kit.explore.ExploreFragment;
 import com.onlinetest.vuquang.trend_ui_kit.order.OrderFragment;
 import com.onlinetest.vuquang.trend_ui_kit.search.SearchFragment;
@@ -79,6 +80,12 @@ public class MainActivity extends BaseActivity {
                         Log.d(TAG,"test cart");
                         CartDialog cartDialog = new CartDialog();
                         cartDialog.show(getSupportFragmentManager(),TAG);
+                        return true;
+                    }
+                    case R.id.app_bar_filter: {
+                        Log.d(TAG,"test cart");
+                        FilterDialog filterDialog = new FilterDialog();
+                        filterDialog.show(getSupportFragmentManager(),TAG);
                         return true;
                     }
                 }
