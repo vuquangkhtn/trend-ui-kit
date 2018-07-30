@@ -28,7 +28,6 @@
             app:contentScrim="@color/colorMain"
             app:expandedTitleGravity="center"
             app:expandedTitleMarginBottom="24dp"
-            app:expandedTitleMarginStart="16dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.Collapsing.ExpandedTitle"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
             <ImageView

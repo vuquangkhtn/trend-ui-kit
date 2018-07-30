@@ -172,7 +172,6 @@
             app:contentScrim="@color/colorMain"
             app:expandedTitleGravity="center"
             app:expandedTitleMarginBottom="24dp"
-            app:expandedTitleMarginStart="16dp"
             app:expandedTitleTextAppearance="@style/TextAppearance.Collapsing.ExpandedTitle"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
             <ImageView
@@ -218,14 +217,13 @@
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/d36"
                     android:paddingLeft="@dimen/d10"
                     android:paddingRight="@dimen/d10"
-                    android:paddingTop="@dimen/d0"
-                    android:paddingBottom="@dimen/d0"
                     android:layout_marginTop="@dimen/d10"
                     android:text="@string/sample_text"
                     android:textSize="@dimen/font_size_13"
+                    android:textColor="@color/colorWhite"
                     android:background="@drawable/shape_round_strike_white"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
