@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/d230"
+    android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/d10"
     android:layout_marginRight="@dimen/d10"
     android:layout_marginLeft="@dimen/d5"
@@ -12,54 +12,108 @@
     app:cardBackgroundColor="@color/colorWhite"
     app:cardElevation="@dimen/d5"
     app:cardCornerRadius="@dimen/d5">
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/imv_picture"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/d165"
-        app:riv_corner_radius="@dimen/d5"
-        android:gravity="center_horizontal"
-        tools:src="@tools:sample/avatars"
-        android:src="@drawable/img_profile"
-        android:scaleType="centerCrop"
-        android:background="@color/background_color"/>
-
-    <ImageView
-        android:id="@+id/imv_sale"
-        android:layout_width="@dimen/d70"
-        android:layout_height="@dimen/d40"
-        android:background="@drawable/ic_sale"/>
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/font_size_13"
-        android:textAlignment="center"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="@dimen/d35"
-        android:layout_marginLeft="@dimen/d10"
-        android:layout_marginRight="@dimen/d10"
-        android:text="@string/sample_text"
-        tools:text="@tools:sample/lorem/random"/>
     <LinearLayout
-        android:id="@+id/container_price_sale"
-        android:orientation="horizontal"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="@dimen/d20"
-        android:layout_marginRight="@dimen/d20"
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/d5">
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imv_picture"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/d165"
+                app:riv_corner_radius="@dimen/d5"
+                android:gravity="center_horizontal"
+                tools:src="@tools:sample/avatars"
+                android:src="@drawable/img_profile"
+                android:scaleType="centerCrop"
+                android:background="@color/background_color"/>
+
+            <ImageView
+                android:id="@+id/imv_sale"
+                android:layout_width="@dimen/d70"
+                android:layout_height="@dimen/d40"
+                android:background="@drawable/ic_sale"/>
+        </FrameLayout>
+
         <TextView
-            android:id="@+id/tv_price_sale"
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_13"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/d10"
+            android:layout_marginRight="@dimen/d10"
+            android:text="@string/sample_text"
+            tools:text="@tools:sample/lorem/random"/>
+        <LinearLayout
+            android:id="@+id/container_price_sale"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/d20"
+            android:layout_marginRight="@dimen/d20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/d5">
+            <TextView
+                android:id="@+id/tv_price_sale"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/font_size_17"
+                android:textAlignment="center"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="$20"
+                tools:text="$20"/>
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_old_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/font_size_16"
+                    android:textAlignment="center"
+                    android:maxLines="1"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="$30"
+                    tools:text="$30"/>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height= "1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/hint_color" />
+            </FrameLayout>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_price"
+            android:visibility="gone"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="@dimen/font_size_17"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/d20"
+            android:layout_marginRight="@dimen/d20"
+            android:layout_marginBottom="@dimen/d5"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_16"
             android:textAlignment="center"
             android:maxLines="1"
             android:textStyle="bold"
@@ -67,50 +121,7 @@
             android:singleLine="true"
             android:text="$20"
             tools:text="$20"/>
-        <FrameLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/tv_old_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/hint_color"
-                android:textSize="@dimen/font_size_16"
-                android:textAlignment="center"
-                android:maxLines="1"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="$30"
-                tools:text="$30"/>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height= "1dp"
-                android:layout_gravity="center"
-                android:background="@color/hint_color" />
-        </FrameLayout>
-
     </LinearLayout>
-    <TextView
-        android:id="@+id/tv_price"
-        android:visibility="gone"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="@dimen/d20"
-        android:layout_marginRight="@dimen/d20"
-        android:layout_marginBottom="@dimen/d5"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/font_size_16"
-        android:textAlignment="center"
-        android:maxLines="1"
-        android:textStyle="bold"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:text="$20"
-        tools:text="$20"/>
+
 
 </android.support.v7.widget.CardView>

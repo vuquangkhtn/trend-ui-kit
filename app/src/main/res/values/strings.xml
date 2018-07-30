@@ -66,4 +66,9 @@
     <string name="xl_size">XL</string>
     <string name="color">Color</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="active">Active</string>
+    <string name="history">History</string>
+
 </resources>
