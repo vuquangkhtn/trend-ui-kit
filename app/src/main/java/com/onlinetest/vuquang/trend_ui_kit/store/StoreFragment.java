@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseFragment;
+import com.onlinetest.vuquang.trend_ui_kit.dialog.ItemInfoDialog;
 import com.onlinetest.vuquang.trend_ui_kit.main.MainActivity;
 
 import java.util.ArrayList;
@@ -73,6 +74,15 @@ public class StoreFragment extends BaseFragment {
         rvItemList.setLayoutManager(new GridLayoutManager(getContext(), 2));
         mAdapter = new StoreAdapter(getContext());
         rvItemList.setAdapter(mAdapter);
+
+        mAdapter.setStoreItemListener(new StoreAdapter.StoreItemListener() {
+            @Override
+            public void onStoreItemClicked(StoreItem storeItem) {
+                ItemInfoDialog itemInfoDialog = new ItemInfoDialog();
+                itemInfoDialog.show(getFragmentManager(),TAG);
+            }
+        });
+
         updateData();
     }
 

@@ -53,6 +53,9 @@ public class ColorRadioButton extends FrameLayout implements CustomRadioButton {
         imvColor.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(onCheckButtonClickListener == null) {
+                    return;
+                }
                 onCheckButtonClickListener.onClicked((CustomRadioButton) root);
             }
         });

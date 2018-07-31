@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/d10"
+    android:paddingBottom="@dimen/d10"
+    android:paddingRight="@dimen/d5"
+    android:paddingLeft="@dimen/d5">
+    <TextView
+        android:id="@+id/tv_txt_order_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="@dimen/d10"
+        android:layout_marginEnd="@dimen/d10"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/font_size_13"
+        android:text="@string/order_no" />
+    <TextView
+        android:id="@+id/tv_order_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_txt_order_no"
+        android:layout_toEndOf="@+id/tv_txt_order_no"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font_size_13"
+        android:text="123701230"/>
+    <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/font_size_12"
+        android:text="21.11.2015"/>
+    <TextView
+        android:id="@+id/tv_txt_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/d10"
+        android:layout_marginEnd="@dimen/d10"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/font_size_13"
+        android:layout_below="@+id/tv_txt_order_no"
+        android:text="@string/track" />
+    <TextView
+        android:id="@+id/tv_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_order_no"
+        android:layout_toRightOf="@+id/tv_txt_track"
+        android:layout_toEndOf="@+id/tv_txt_track"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font_size_13"
+        android:text="FSAD97FSD"/>
+    <TextView
+        android:id="@+id/tv_state_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_txt_track"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/font_size_13"
+        android:textStyle="bold"
+        android:text="@string/order_delivered" />
+</RelativeLayout>

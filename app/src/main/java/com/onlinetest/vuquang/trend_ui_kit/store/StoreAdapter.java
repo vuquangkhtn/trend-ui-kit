@@ -27,6 +27,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
 
     private List<StoreItem> storeItemList;
     private Context mContext;
+    private StoreItemListener storeItemListener;
 
     public StoreAdapter(Context context) {
         this.mContext = context;
@@ -55,6 +56,13 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
 
     @Override
     public void onBindViewHolder(@NonNull final StoreItemHolder holder, int position) {
+        final StoreItem storeItem = storeItemList.get(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeItemListener.onStoreItemClicked(storeItem);
+            }
+        });
         switch (holder.getItemViewType()) {
             case SALE_TYPE: {
                 holder.imvSale.setVisibility(View.VISIBLE);
@@ -92,6 +100,14 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreItemHol
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+    }
+
+    public void setStoreItemListener(StoreItemListener storeItemListener) {
+        this.storeItemListener = storeItemListener;
+    }
+
+    public interface StoreItemListener {
+        void onStoreItemClicked(StoreItem storeItem);
     }
 
 }

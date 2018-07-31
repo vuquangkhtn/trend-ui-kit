@@ -70,5 +70,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="active">Active</string>
     <string name="history">History</string>
+    <string name="specifications">Specifications</string>
+    <string name="architeture">Architeture</string>
+    <string name="show_more">Show more...</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="order_no">Order No:</string>
+    <string name="track">Track:</string>
+    <string name="order_delivered">Order delivered</string>
+    <string name="estimated_time">Estimated delivery date:</string>
+    <string name="order_on_delivery">Order on delivery</string>
+    <string name="processed">Processed</string>
 
 </resources>
