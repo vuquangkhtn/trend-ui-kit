@@ -42,6 +42,7 @@ public class ArticleDialog extends BaseDialog {
     @BindView(R.id.rv_tag_list) RecyclerView rvTagList;
     @BindView(R.id.imb_like) ImageButton imbLike;
     @BindView(R.id.imb_unlike) ImageButton imbUnlike;
+    @BindView(R.id.imb_comment) ImageButton imbComment;
     private TagAdapter tagAdapter;
 
     @Nullable
@@ -75,6 +76,14 @@ public class ArticleDialog extends BaseDialog {
             public void onClick(View v) {
                 imbLike.setVisibility(View.VISIBLE);
                 imbUnlike.setVisibility(View.GONE);
+            }
+        });
+
+        imbComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CommentDialog commentDialog = new CommentDialog();
+                commentDialog.show(getFragmentManager(), TAG);
             }
         });
 
