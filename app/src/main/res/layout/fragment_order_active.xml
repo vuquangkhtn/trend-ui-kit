@@ -1,13 +1,11 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rv_orders"
+    android:background="@color/background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.onlinetest.vuquang.trend_ui_kit.order.OrderActiveFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+    android:paddingBottom="@dimen/d10"
+    tools:listitem = "@layout/item_order_delivered">
+</android.support.v7.widget.RecyclerView>

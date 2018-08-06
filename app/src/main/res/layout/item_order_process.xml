@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:layout_marginTop="@dimen/d10"
+    android:layout_marginLeft="@dimen/d10"
+    android:layout_marginRight="@dimen/d10"
     android:paddingTop="@dimen/d10"
     android:paddingBottom="@dimen/d10"
     android:paddingRight="@dimen/d5"

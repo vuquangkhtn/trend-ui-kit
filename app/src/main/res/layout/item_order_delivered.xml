@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:layout_marginTop="@dimen/d10"
+    android:layout_marginLeft="@dimen/d10"
+    android:layout_marginRight="@dimen/d10"
     android:paddingTop="@dimen/d10"
     android:paddingBottom="@dimen/d10"
     android:paddingRight="@dimen/d5"
@@ -25,6 +30,7 @@
         android:layout_toEndOf="@+id/tv_txt_order_no"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/font_size_13"
+        tools:text="123701230"
         android:text="123701230"/>
     <TextView
         android:id="@+id/tv_order_time"
@@ -34,6 +40,7 @@
         android:layout_alignParentRight="true"
         android:textColor="@color/hint_color"
         android:textSize="@dimen/font_size_12"
+        tools:text="21.11.2015"
         android:text="21.11.2015"/>
     <TextView
         android:id="@+id/tv_txt_track"
@@ -54,6 +61,7 @@
         android:layout_toEndOf="@+id/tv_txt_track"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/font_size_13"
+        tools:text="FSAD97FSD"
         android:text="FSAD97FSD"/>
     <TextView
         android:id="@+id/tv_state_order"
