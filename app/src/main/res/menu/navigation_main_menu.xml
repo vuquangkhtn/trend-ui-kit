@@ -24,10 +24,6 @@
                         android:icon="@drawable/ic_search"
                         android:title="@string/explore_name" />
                     <item
-                        android:id="@+id/nav_comment"
-                        android:icon="@drawable/ic_search"
-                        android:title="@string/comment_name" />
-                    <item
                         android:id="@+id/nav_search"
                         android:icon="@drawable/ic_search"
                         android:title="@string/search" />

@@ -16,7 +16,6 @@ import android.view.View;
 
 import com.onlinetest.vuquang.trend_ui_kit.R;
 import com.onlinetest.vuquang.trend_ui_kit.base.BaseActivity;
-import com.onlinetest.vuquang.trend_ui_kit.comment.CommentFragment;
 import com.onlinetest.vuquang.trend_ui_kit.dialog.CartDialog;
 import com.onlinetest.vuquang.trend_ui_kit.dialog.FilterDialog;
 import com.onlinetest.vuquang.trend_ui_kit.explore.ExploreFragment;
@@ -140,9 +139,6 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.nav_explore:
                 fragmentClass = ExploreFragment.class;
-                break;
-            case R.id.nav_comment:
-                fragmentClass = CommentFragment.class;
                 break;
             case R.id.nav_search:
                 fragmentClass = SearchFragment.class;
