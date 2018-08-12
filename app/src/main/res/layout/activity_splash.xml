@@ -55,7 +55,7 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/d15"
             android:textColor="@android:color/white"
-            android:text="Login" />
+            android:text="@string/login" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,14 +63,14 @@
             android:gravity="center"
             android:textColor="@color/hint_color"
             android:textSize="@dimen/font_size_16"
-            android:text="or"/>
+            android:text="@string/or"/>
         <Button
             android:id="@+id/btn_create_account"
             android:background="@drawable/bg_btn_transparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@android:color/white"
-            android:text="Create an account" />
+            android:text="@string/create_an_account" />
     </LinearLayout>
 
 </RelativeLayout>

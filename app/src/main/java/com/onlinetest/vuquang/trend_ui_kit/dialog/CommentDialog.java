@@ -48,7 +48,7 @@ public class CommentDialog extends BaseDialog {
     }
 
     private void setupToolbar() {
-        toolbar.setTitle(R.string.filter);
+        toolbar.setTitle(R.string.comment_name);
         toolbar.inflateMenu(R.menu.close_menu);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override

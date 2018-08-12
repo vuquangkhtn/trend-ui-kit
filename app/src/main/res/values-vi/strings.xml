@@ -4,32 +4,32 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="company_name">TREND</string>
     <string name="sologan">Fashion. Fresh. For Everyone</string>
-    <string name="policy"><p>By creating an account you agree to our <br /><font color="white"> User Agreement</font> and <font color="white">Privacy policy</font></p></string>
+    <string name="policy"><p>Bằng việc sử dụng Dịch vụ của chúng tôi, bạn đang đồng ý với <br /><font color="white"> Điều khoản sử dụng</font> và <font color="white"> Chính sách bảo mật </font></p></string>
 
-    <string name="some_error">Some Error Occurred!</string>
+    <string name="some_error">Có lỗi xảy ra!</string>
 
-    <string name="login">Login</string>
-    <string name="create_an_account">Create an account</string>
-    <string name="create_account">Create account</string>
-    <string name="sign_out">Sign out</string>
-    <string name="user_name">Username</string>
-    <string name="password">Password</string>
-    <string name="confirm_pass">Confirm Password</string>
-    <string name="forgot_pass">Forgot password?</string>
+    <string name="login">Đăng nhập</string>
+    <string name="create_an_account">Tạo tài khoản</string>
+    <string name="create_account">Đăng ký</string>
+    <string name="sign_out">Đăng xuất</string>
+    <string name="user_name">Tên đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="confirm_pass">Xác nhận mật khẩu</string>
+    <string name="forgot_pass">Quên mật khẩu?</string>
     <string name="email">E-mail</string>
-    <string name="welcome">Welcome back!</string>
-    <string name="toolbar_title">Title</string>
+    <string name="welcome">Chào bạn!</string>
+    <string name="toolbar_title">Tiêu đề</string>
     <string name="toolbar_navigation_close_description">Close demo</string>
 
-    <string name="shop_name">Shop</string>
-    <string name="orders_name">Orders</string>
-    <string name="explore_name">Explore</string>
-    <string name="comment_name">Comment</string>
-    <string name="search">Search</string>
-    <string name="edit_profile">Edit profile</string>
-    <string name="search_hint">Search...</string>
-    <string name="trends">Trends</string>
-    <string name="feed">Feed</string>
+    <string name="shop_name">Cửa hàng</string>
+    <string name="orders_name">Đơn hàng</string>
+    <string name="explore_name">Khám phá</string>
+    <string name="comment_name">Bình luận</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="edit_profile">Cập nhật thông tin</string>
+    <string name="search_hint">Tìm kiếm...</string>
+    <string name="trends">Xu hướng</string>
+    <string name="feed">Tin tức</string>
     <string name="time_test">◷ 9h</string>
     <string name="sample_text">Isaace Peterson</string>
     <string name="long_sample_text" translatable="false">
@@ -40,46 +40,46 @@
     \n\n\t\tPhasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper, libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
   </string>
     <string name="sample_time">9h</string>
-    <string name="follow">Follow</string>
-    <string name="following">Following</string>
-    <string name="attachment_items">attachment items</string>
-    <string name="filter">Filter</string>
-    <string name="cart">Cart</string>
-    <string name="subtotal">Subtotal</string>
-    <string name="continue_order">Continue Order</string>
-    <string name="sort">Sort</string>
-    <string name="most_popular">Most popular</string>
-    <string name="most_view">Most view</string>
-    <string name="most_recent">Most recent</string>
-    <string name="type">Type</string>
-    <string name="unisex">Unisex</string>
-    <string name="men">Men</string>
-    <string name="women">Women</string>
-    <string name="price">Price</string>
-    <string name="show_items">Show items</string>
-    <string name="size">Size</string>
+    <string name="follow">Theo dõi</string>
+    <string name="following">Đang theo dõi</string>
+    <string name="attachment_items">Tập tin đính kèm</string>
+    <string name="filter">Bộ lọc</string>
+    <string name="cart">Túi đồ</string>
+    <string name="subtotal">Tổng cộng</string>
+    <string name="continue_order">Tiếp tục mua hàng</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="most_popular">Phổ biến nhất</string>
+    <string name="most_view">Xem nhiều nhất</string>
+    <string name="most_recent">Gần nhất</string>
+    <string name="type">Loại</string>
+    <string name="unisex">Khác</string>
+    <string name="men">Nam</string>
+    <string name="women">Nữ</string>
+    <string name="price">Giá</string>
+    <string name="show_items">Hiển thị</string>
+    <string name="size">Kích thước</string>
     <string name="xs_size">XS</string>
     <string name="s_size">S</string>
     <string name="m_size">M</string>
     <string name="l_size">L</string>
     <string name="xl_size">XL</string>
-    <string name="color">Color</string>
+    <string name="color">Màu sắc</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="active">Active</string>
-    <string name="history">History</string>
-    <string name="specifications">Specifications</string>
-    <string name="architeture">Architeture</string>
-    <string name="show_more">Show more...</string>
-    <string name="add_to_cart">Add to cart</string>
-    <string name="order_no">Order No:</string>
-    <string name="track">Track:</string>
-    <string name="order_delivered">Order delivered</string>
-    <string name="estimated_time">Estimated delivery date:</string>
-    <string name="order_on_delivery">Order on delivery</string>
-    <string name="processed">Processed</string>
-    <string name="or">or</string>
-    <string name="hint_comment">some text ...</string>
+    <string name="hello_blank_fragment">Chức năng này đang phát triển</string>
+    <string name="active">Đang thực hiện</string>
+    <string name="history">Lịch sử</string>
+    <string name="specifications">Chi tiết</string>
+    <string name="architeture">Kiến trúc</string>
+    <string name="show_more">Hiển thị thêm...</string>
+    <string name="add_to_cart">Thêm vào giỏ hàng</string>
+    <string name="order_no">Mã đơn hàng:</string>
+    <string name="track">Mã theo dõi:</string>
+    <string name="order_delivered">Đơn hàng đã được gửi</string>
+    <string name="estimated_time">Ngày nhận:</string>
+    <string name="order_on_delivery">Đơn hàng đang được gửi</string>
+    <string name="processed">Đang xử lý</string>
+    <string name="or">hoặc</string>
+    <string name="hint_comment">bình luận ...</string>
 
 </resources>

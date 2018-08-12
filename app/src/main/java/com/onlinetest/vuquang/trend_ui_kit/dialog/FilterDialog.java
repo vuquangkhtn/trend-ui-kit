@@ -119,7 +119,7 @@ public class FilterDialog extends BaseDialog{
             CustomRadioButton customBtn = checkRadioButtonsSortList.get(i);
             if(customBtn instanceof CheckRadioButton) {
                 CheckRadioButton btnSort = (CheckRadioButton) customBtn;
-                btnSort.getTvCheck().setText(typeName[i]);
+                btnSort.getTvCheck().setText(sortName[i]);
             }
         }
         sortGroup = new ButtonGroupHelper(checkRadioButtonsSortList);
