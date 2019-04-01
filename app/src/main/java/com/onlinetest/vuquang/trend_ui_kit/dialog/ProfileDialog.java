@@ -35,7 +35,7 @@ public class ProfileDialog extends BaseDialog {
     private static final String TAG = "ProfileDialog";
 
     @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.rv_list_item) RecyclerView rvFeedList;
+    @BindView(R.id.rv_profile_item) RecyclerView rvFeedList;
         @BindView(R.id.imv_profile) ImageView imvProfile;
         @BindView(R.id.tv_bio) TextView tvBio;
         @BindView(R.id.tv_followers_count) TextView tvFollowerCount;

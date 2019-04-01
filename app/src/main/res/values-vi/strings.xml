@@ -81,5 +81,6 @@
     <string name="processed">Đang xử lý</string>
     <string name="or">hoặc</string>
     <string name="hint_comment">bình luận ...</string>
+    <string name="exit_text">chạm lại phím BACK để thoát</string>
 
 </resources>

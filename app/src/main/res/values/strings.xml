@@ -81,5 +81,10 @@
     <string name="processed">Processed</string>
     <string name="or">or</string>
     <string name="hint_comment">some text ...</string>
+    <string name="exit_text">Please click BACK again to exit</string>
+    <string name="login_error">Login failed!</string>
+    <string name="login_invalid">Login invalid</string>
+    <string name="signup_invalid">Signup Invalid</string>
+    <string name="article">Article Demo</string>
 
 </resources>

@@ -116,7 +116,7 @@ public class BaseActivity extends AppCompatActivity implements MvpView, BaseFrag
         }
 
         this.doubleBackToExitPressedOnce = true;
-        showMessage("Please click BACK again to exit");
+        showMessage(getString(R.string.exit_text));
 
         new Handler().postDelayed(new Runnable() {
 

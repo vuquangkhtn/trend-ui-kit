@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 
 public class TrendFragment extends BaseFragment {
     public static final String TAG = "TrendFragment";
-    @BindView(R.id.rv_list_item) RecyclerView rvFeedList;
+    @BindView(R.id.rv_trends) RecyclerView rvFeedList;
     private FeedAdapter mAdapter;
 
     @Override

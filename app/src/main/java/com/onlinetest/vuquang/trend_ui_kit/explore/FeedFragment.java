@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 
 public class FeedFragment extends BaseFragment {
     public static final String TAG = "FeedFragment";
-    @BindView(R.id.rv_list_item) RecyclerView rvFeedList;
+    @BindView(R.id.rv_feeds) RecyclerView rvFeedList;
     private FeedAdapter mAdapter;
     private List dataList;
 

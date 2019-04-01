@@ -51,7 +51,7 @@ public class ArticleDialog extends BaseDialog {
         View view = View.inflate(getActivity(), R.layout.dialog_article, null);
         ButterKnife.bind(this, view);
 
-        toolbar.setTitle("Article Test");
+        toolbar.setTitle(R.string.article);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
